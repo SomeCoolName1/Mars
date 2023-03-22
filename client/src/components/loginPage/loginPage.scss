@@ -1,0 +1,119 @@
+@use "../../App.scss";
+
+$firstBP: 480px; //Mobile Screens
+
+.user-cred-container {
+  display: flex;
+  background-color: App.$primaryClr;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.user-cred-form {
+  border: 10px App.$secondaryClr solid;
+  padding: calc(2 * App.$topPadding);
+  border-radius: App.$borderRadius;
+  margin: 0 auto;
+  width: 40%;
+  height: 100%;
+  min-height: 33vh;
+  color: rgb(231, 233, 234);
+  z-index: 10;
+}
+
+.login-header {
+  font-size: xx-large;
+}
+
+.input-container {
+  position: relative;
+  height: 100%;
+  @include App.userCredentialInputs(24);
+  background-color: transparent;
+}
+
+.form-button {
+  margin-top: 24px;
+  margin-right: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+  height: 40px;
+  min-width: 125px;
+  width: 10%;
+  transition: all 0.3s ease-out 0.1s;
+  background: transparent;
+  color: App.$logoClr;
+  border: 1px App.$logoClr solid;
+
+  &:hover {
+    background: App.$logoClr;
+    color: white;
+  }
+}
+
+@media (max-width: $firstBP) {
+}
+
+.animated-login-container {
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  img {
+    background-color: transparent;
+  }
+}
+
+.logo-rocket {
+  position: absolute;
+  bottom: 20%;
+  left: 25%;
+  height: auto;
+  width: 55%;
+  min-height: 500px;
+  max-height: 700px;
+}
+
+.logo-cloud {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  max-height: 400px;
+  width: auto;
+}
+
+.register-form-header {
+  width: 100%;
+
+  h1 {
+    width: 100%;
+
+    text-align: center;
+  }
+}
+
+.return-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 10px;
+
+  transition: all 0.3s ease-out 0.1s;
+  background: transparent;
+  color: App.$logoClr;
+  border: 1px App.$logoClr solid;
+
+  &:hover {
+    background: App.$logoClr;
+    color: white;
+  }
+}

@@ -1,0 +1,78 @@
+@use "../../App.scss";
+
+.profile-form-container {
+  @include App.formContainer();
+}
+
+.form {
+  height: 100%;
+  overflow-y: scroll !important;
+}
+
+.input-container {
+  position: relative;
+  height: 100%;
+  @include App.userCredentialInputs(24);
+}
+
+.label-counter {
+  position: absolute;
+  right: 0;
+  font-size: smaller;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  .image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .preview-image-remove {
+    margin-top: 12px;
+    color: App.$logoClr;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.preview-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    width: 70%;
+    margin-top: App.$topPadding;
+  }
+
+  .preview-nav-page {
+    width: 275px;
+  }
+}
+
+.preview-profile-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+
+.preview-nav-page {
+  text-align: center;
+}
+
+.preview-container {
+  margin-top: 24px;
+  padding-bottom: 24px;
+  img {
+    border: App.$lightBottomBorder !important;
+  }
+}

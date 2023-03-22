@@ -1,0 +1,80 @@
+@use "../../App.scss";
+
+.comments-container {
+  width: 100%;
+  border-top: App.$lightBottomBorder;
+  padding-top: App.$topPadding;
+
+  img {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    &:hover {
+      filter: brightness(110%);
+      cursor: pointer;
+    }
+  }
+}
+
+.display-comments {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.user-comments-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  margin-bottom: 6px;
+  margin-top: calc(App.$topPadding/1.5);
+}
+
+.user-comments-content {
+  margin-left: App.$topPadding;
+  width: 100%;
+  word-break: break-all;
+  border-radius: 11px;
+  background-color: #2b2b30 !important;
+  padding: calc(App.$topPadding/1.5);
+}
+
+.comment-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: App.$topPadding;
+
+  textarea {
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    &:focus {
+      border: 1px App.$logoClr solid;
+    }
+  }
+  button {
+    @include App.button(30px, 60px, 10%);
+
+    margin-left: App.$topPadding;
+  }
+}
+
+.user-comments-author,
+.user-comments-author-image {
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.user-comments-author {
+  font-weight: bolder;
+}

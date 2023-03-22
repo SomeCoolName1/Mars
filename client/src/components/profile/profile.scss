@@ -1,0 +1,116 @@
+@use "../../App.scss";
+
+.profile-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100px;
+  width: 600px;
+  padding-top: 16px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.profile-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+
+.profile-banner-container {
+  height: 100%;
+  border-radius: 16px 16px 0px 0px;
+  overflow: hidden;
+  width: 100%;
+
+  background-position: center;
+  background-size: cover;
+  img {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.profile-picture-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: -15%;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  margin-bottom: 16px;
+
+  button {
+    @include App.button(30px, 50px, 30%);
+  }
+}
+
+.profile-picture {
+  border-radius: 100%;
+  width: 25%;
+  min-width: 100px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border: 2px solid App.$primaryClr;
+  background-color: App.$primaryClr;
+  box-sizing: border-box;
+  background-clip: content-box;
+  img {
+    width: 100%;
+  }
+}
+
+.profile-name,
+.profile-bio {
+  margin-left: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-name {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.25px;
+}
+
+.profile-bio {
+  margin-bottom: 16px;
+}
+
+.profile-category {
+  width: 100%;
+  border-bottom: App.$lightBottomBorder;
+  flex-shrink: 1;
+  scroll-padding: 0px 36px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  flex-wrap: nowrap;
+  justify-content: center;
+  button {
+    font-size: 15px;
+    letter-spacing: 0.25px;
+    height: 53px;
+    width: 33%;
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+    flex-grow: 1;
+    padding-left: 16px;
+    min-width: 56px;
+    padding-right: 16px;
+
+    &:hover {
+      @include App.hoveredButton();
+    }
+  }
+}
+
+.category-active {
+  border-bottom: 3px App.$logoClr solid;
+  h1 {
+    color: App.$logoClr;
+  }
+}

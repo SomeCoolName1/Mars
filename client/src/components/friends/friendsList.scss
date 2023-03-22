@@ -1,0 +1,113 @@
+@use "../../App.scss";
+
+.friends-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 350px;
+  width: 100%;
+  //Next width is 290px at >1024
+  padding-top: App.$topPadding;
+  height: 100%;
+  min-height: 100vh;
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+
+.friends-header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.friends-list,
+.suggestions-list {
+  padding: App.$topPadding;
+  height: 100%;
+  border-radius: App.$borderRadius;
+  background: App.$secondaryClr;
+  & * {
+    background-color: transparent;
+  }
+}
+
+.friends-list {
+  min-height: 50vh;
+  flex: 1;
+  margin-bottom: App.$topPadding;
+  overflow-y: scroll;
+}
+
+.friends {
+  padding: 12px;
+  border-radius: 6px;
+  outline-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: center;
+  // &:not(:last-child) {
+  //   border-bottom: 1px white solid;
+  // }
+  &:hover {
+    @include App.hoveredButton();
+  }
+}
+
+.friends-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  margin-right: 16px;
+}
+
+.friend-info {
+  .friends-name {
+    word-wrap: break-word;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+    word-wrap: break-word;
+    width: auto;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .friends-bio {
+    font-weight: 400;
+    font-size: 15px;
+    color: rgb(113, 118, 123);
+  }
+}
+
+.friend-search-bar {
+  background-color: App.$primaryClr;
+  border-radius: App.$borderRadius;
+  width: 100%;
+  padding: App.$topPadding;
+  margin-bottom: App.$topPadding;
+}
+
+.suggestions-footer {
+  width: 100%;
+  p {
+    width: auto;
+    color: App.$logoClr;
+    text-align: end;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+//Go make some friends
+.lonely-div {
+  text-align: center;
+}

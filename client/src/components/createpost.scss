@@ -1,0 +1,78 @@
+@use "../App.scss";
+
+.post-form-container {
+  @include App.formContainer();
+}
+
+.post-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-preview-container {
+  width: 100%;
+  img {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}
+
+.image-upload {
+  width: 100%;
+  color: App.$logoClr;
+  margin-top: 12px;
+  text-align: center;
+  & > input {
+    display: none;
+  }
+  h1:hover {
+    color: App.$logoClr;
+    cursor: pointer;
+  }
+}
+
+.content-length {
+  position: absolute;
+  right: 0;
+  margin-right: 16px;
+}
+
+.post-content {
+  width: 100%;
+  padding: 16px;
+  color: white;
+  border: 1px white solid;
+  border-radius: 16px;
+
+  textarea {
+    color: white;
+    font-size: 20px;
+    height: 150px;
+    max-height: 600px;
+    width: 100%;
+    max-width: 500px;
+    font-weight: 400;
+    overflow: hidden;
+    resize: none;
+    word-wrap: break-word;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+  }
+}
+
+.post-profile-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin-right: 12px;
+}
+
+.preview-image-remove {
+  margin-top: 12px;
+  color: App.$logoClr;
+  &:hover {
+    color: white;
+  }
+}

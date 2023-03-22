@@ -1,0 +1,183 @@
+$primaryClr: #0f0f0f;
+// $primaryClr: rgb(31, 31, 31);
+$secondaryClr: #212124;
+$logoClr: rgb(254, 101, 13);
+$borderRadius: 16px;
+$borderStyle: 1px white solid;
+$topPadding: 12px;
+$lightBottomBorder: 1px solid rgb(58, 63, 66);
+$hoverClr: #333338d2;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+  box-sizing: border-box;
+  background: $primaryClr;
+  color: white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin hoveredButton() {
+  background-color: $hoverClr;
+  transition: background-color cubic-bezier(0.07, 0.36, 0.84, 0.73) 0.3s;
+}
+
+// @mixin primaryHeaders() {
+//   letter-spacing: 0.25px;
+//   font-weight: 800;
+//   font-size: 20px;
+// }
+
+@mixin userCredentialInputs($padding) {
+  input {
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+    color: rgb(231, 233, 234);
+    width: 100%;
+    height: 100%;
+    border: 1px white solid;
+    border-radius: 4px;
+    padding-top: #{$padding}px;
+    padding-left: #{$padding * (2/3)}px;
+    padding-right: #{$padding * (2/3)}px;
+    padding-bottom: #{$padding * (2/3)}px;
+    margin-top: #{$padding * 4/3}px;
+    margin-left: 0;
+    margin-bottom: 0;
+    &:focus,
+    &:active {
+      border-color: $logoClr;
+    }
+    &:focus ~ .input-label,
+    &:valid ~ .input-label {
+      padding-top: #{$padding * (1/3) + $padding * 4/3}px;
+      padding-bottom: #{$padding * (2/3)}px;
+      color: $logoClr;
+      font-size: small;
+    }
+  }
+
+  .input-label {
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 17px;
+    font-weight: 400;
+    padding-top: #{$padding * (2/3) + $padding * 4/3}px;
+    padding-left: #{$padding * (2/3)}px;
+  }
+}
+
+@mixin button($height, $minWidth, $width) {
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+  height: #{$height}; //Typically 40px
+  min-width: #{$minWidth}; //Typically 125px
+  width: #{$width}; //typically 10%
+  transition: all 0.3s ease-out 0.1s;
+  background: transparent;
+  color: $logoClr;
+  border: 1px $logoClr solid;
+
+  &:hover {
+    background: $logoClr;
+    color: white;
+  }
+}
+
+h1 {
+  letter-spacing: 0.25px;
+  font-weight: 800;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 15px;
+  color: rgb(113, 118, 123);
+  background-color: transparent;
+}
+
+/*-------------------------Form Related-------------------------------*/
+
+@mixin formContainer() {
+  width: 100%;
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button,
+  input {
+    cursor: pointer;
+  }
+
+  .form-background {
+    background-color: $primaryClr;
+    opacity: 0.95;
+    min-height: 100vh;
+    min-width: 100vw;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .form {
+    z-index: 100;
+    width: 100%;
+    min-height: 100%;
+    top: 2%;
+    position: fixed;
+    border-radius: $borderRadius;
+    padding: 16px;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: $logoClr 0px 20px 80px 4px;
+  }
+
+  .form-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: calc(2 * $topPadding);
+    align-items: center;
+    & > * {
+      width: 15%;
+      min-width: 80px;
+      text-align: center;
+    }
+    button,
+    input {
+      min-height: 36px;
+      background-color: transparent;
+      text-align: center;
+      transition-duration: 0.2s;
+      border-radius: 16px;
+      background: $logoClr;
+      color: white;
+      border: 1px $logoClr solid;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: capitalize;
+      transition: all 0.3s ease-out 0.1s;
+      &:hover {
+        background: transparent;
+        color: white;
+      }
+    }
+  }
+}

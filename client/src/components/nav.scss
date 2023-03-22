@@ -1,0 +1,163 @@
+@use "../App.scss";
+
+// $firstBP: 700px;
+
+.nav-container {
+  padding-top: App.$topPadding;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: center;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 275px;
+  width: 100%;
+}
+
+.nav-categories {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  & > div {
+    background-color: App.$secondaryClr;
+    border-radius: App.$borderRadius;
+    margin-bottom: App.$topPadding;
+    text-align: center;
+    overflow: hidden;
+  }
+  * {
+    background-color: transparent;
+  }
+}
+
+.nav-header {
+  &:hover {
+    @include App.hoveredButton();
+    cursor: pointer;
+  }
+}
+
+.nav-profile {
+  display: flex;
+  flex-direction: column;
+  .nav-profile-bg {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+  }
+  .nav-profile-image {
+    position: relative;
+    z-index: 10;
+    margin: -38px auto 1.2rem;
+    border: 2px solid App.$primaryClr;
+    background-color: App.$primaryClr;
+    box-sizing: border-box;
+    background-clip: content-box;
+    width: 72px;
+    height: 72px;
+  }
+  .nav-profile-name {
+    padding-bottom: 16px;
+  }
+
+  button {
+    width: 100%;
+    transition-duration: 0.2s;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    outline-style: none;
+    background-color: App.$secondaryClr;
+
+    &:hover {
+      @include App.hoveredButton();
+      cursor: pointer;
+    }
+  }
+}
+
+.nav-friend-activity {
+  padding: App.$topPadding;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  h1 {
+    margin-bottom: 12px;
+  }
+}
+
+.nav-logout-btn {
+  @include App.button(40px, 125px, 10%);
+  margin: 0 auto;
+  margin-bottom: App.$topPadding;
+}
+
+.nav-recent-post {
+  text-align: start;
+  padding: App.$topPadding;
+  padding-bottom: 0px;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover {
+    @include App.hoveredButton();
+  }
+
+  // max-width: 25px;
+}
+
+.nav-recent-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: App.$topPadding;
+  border-bottom: App.$lightBottomBorder;
+  margin-top: 2.5px;
+  font-size: 13px;
+
+  // max-width: 200px;
+
+  .nav-recent-post-content {
+    overflow: hidden;
+    max-width: 130px;
+    max-height: 20px;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+  }
+  .red-heart {
+    filter: none;
+  }
+}
+
+.nav-recent-info {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+
+  & > * {
+    margin-right: 5px;
+  }
+  img {
+    margin-right: 3px;
+  }
+}
+// @media (min-width: $firstBP) {
+//   .mobile-nav-container {
+//     display: none;
+//   }
+// .posts-container {
+//   width: 55%;
+//   max-width: 600px;
+// }
+
+//Hide creat article button until scrolled down

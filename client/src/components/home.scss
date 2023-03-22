@@ -1,0 +1,44 @@
+@use "../App.scss";
+
+$firstBP: 700px;
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.home-post-container {
+  display: flex;
+  flex-direction: column;
+}
+
+// .mobile-nav-container {
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   width: 100%;
+//   background-color: App.$secondaryClr;
+//   min-height: 75px;
+//   height: 7%;
+// }
+
+// .mobile-nav-option {
+//   width: 50px;
+//   height: 50px;
+//   background-color: white;
+//   border-radius: 100%;
+// }
+
+// .search-bar {
+//   width: 50%;
+//   height: 50%;
+//   background-color: white;
+// }
+
+// @media (min-width: $firstBP) {
+//   .home-container {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//   }
+// }
