@@ -7,8 +7,11 @@ import bannerIcon from "../../assets/list-style.webp";
 
 const ProfileFriends = ({ userID }) => {
   const token = useSelector((state) => state.token);
+  const loggedUser = useSelector((state) => state.user);
   const [friendsList, setFriendsList] = useState(null);
   const navigate = useNavigate();
+
+  const { friends } = loggedUser;
 
   //banner-style card-style
   const [listStyle, setListStyle] = useState("friend-card-style");
@@ -28,7 +31,7 @@ const ProfileFriends = ({ userID }) => {
 
   useEffect(() => {
     getFriends();
-  }, [userID]);
+  }, [userID, friends]);
 
   const navigateToProfile = (userID) => {
     navigate(`/user/${userID}`);
@@ -36,8 +39,6 @@ const ProfileFriends = ({ userID }) => {
 
   const setStyle = (e) => {
     setListStyle(e.target.id);
-
-    console.log(e.target.id);
   };
 
   return (

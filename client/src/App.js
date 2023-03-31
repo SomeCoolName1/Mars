@@ -1,17 +1,15 @@
-import { useDispatch } from "react-redux";
-import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import WithNav from "./withNav";
 import Home from "./components/home";
 import Login from "./components/loginPage/login";
 import Register from "./components/loginPage/register";
 import Profile from "./components/profile/profile";
+import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 import { reset } from "./state/userSlice";
-
-import WithNav from "./withNav";
 
 function App() {
   const dispatch = useDispatch();
-
   dispatch(reset());
 
   return (

@@ -62,6 +62,8 @@ const Posts = ({
       }
     );
     const data = await response.json();
+    setCommentDisplay(false);
+    setDisplayEdits(false);
     dispatch(deletePost({ post: data }));
   };
 

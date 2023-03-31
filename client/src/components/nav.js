@@ -15,6 +15,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const [displayCreate, setDisplay] = useState("none");
   const loggedUser = useSelector((state) => state.user);
+  const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
   const [friendActivity, setActivity] = useState(null);
 
@@ -22,8 +23,7 @@ const NavBar = () => {
 
   useEffect(() => {
     getFriendPosts();
-    console.log("hi");
-  }, []);
+  }, [posts]);
 
   const displayCreatePost = () => {
     if (displayCreate === "none") {
